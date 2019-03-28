@@ -38,7 +38,6 @@ Select a book to return.");
         {
           myLibrary.Checkout(selection);
         }
-
       }
     }
   }

@@ -79,7 +79,6 @@ Available books:");
       return bookList[bookIndex - 1];
     }
 
-
     public Library(string location, string name)
     {
       Location = location;
@@ -92,9 +91,6 @@ Available books:");
       new Book("Ficciones", "Jorge Luis Borges"),
     };
       CheckedOut = new List<Book>();
-
     }
-
   }
-
 }

@@ -12,6 +12,5 @@ namespace console_library.Models
       Author = author;
       Available = true;
     }
-
   }
 }
