@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-// using console_library.Interfaces;
+using console_library.Interfaces;
 using console_library.Models;
 
 namespace console_library
@@ -14,10 +14,6 @@ namespace console_library
       string response = Console.ReadLine().ToLower();
       bool inLibrary = true;
       Library myLibrary = new Library("Boise", "Capital Library");
-      Console.Clear();
-      Console.WriteLine(@"Welcome to Capital Library.
-      
-Available Books:");
       while (inLibrary)
       {
         myLibrary.PrintBooks(myLibrary.Books);

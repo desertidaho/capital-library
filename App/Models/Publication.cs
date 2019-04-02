@@ -6,11 +6,11 @@ namespace console_library.Models
     public bool Available { get; set; }
     public string PublicationDate { get; set; }
 
-    public Publication(string title, string publicationDate, bool available)
+    public Publication(string title, string publicationDate)
     {
       Title = title;
-      Available = true;
       PublicationDate = publicationDate;
+      Available = true;
     }
   }
 }

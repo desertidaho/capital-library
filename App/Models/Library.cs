@@ -9,6 +9,10 @@ namespace console_library.Models
     public string Location { get; set; }
     public string Name { get; set; }
     public List<Book> Books { get; private set; }
+    public List<Electronic> Electronics { get; private set; }
+    public List<Magazine> Magazines { get; private set; }
+    public List<Newspaper> Newspapers { get; private set; }
+    public List<Video> Videos { get; private set; }
     public List<Book> CheckedOut { get; private set; }
 
     public void PrintBooks(List<Book> books)
@@ -85,11 +89,40 @@ Available books:");
       Name = name;
       Books = new List<Book>()
       {
-      new Book("Where the Sidewalk Ends", "Shel Silverstein"),
-      new Book("Things Fall Apart", "Chinua Achebe"),
-      new Book("A New Earth", "Eckhart Tolle"),
-      new Book("Ficciones", "Jorge Luis Borges"),
+      new Book("Where the Sidewalk Ends", "April 1974", "Shel Silverstein"),
+      new Book("Things Fall Apart", "December 1958", "Chinua Achebe"),
+      new Book("A New Earth", "October 2006", "Eckhart Tolle"),
+      new Book("Ficciones", "September 1944", "Jorge Luis Borges"),
     };
+
+      Electronics = new List<Electronic>()
+      {
+      new Electronic("Nintendo", "2016"),
+      new Electronic("Xbox", "2017"),
+      new Electronic("PlayStation", "2017"),
+    };
+
+      Magazines = new List<Magazine>()
+      {
+      new Magazine("Economist", "March 2019"),
+      new Magazine("Dwell", "March 2019"),
+      new Magazine("New Yorker", "February 2019"),
+    };
+
+      Newspapers = new List<Newspaper>()
+      {
+      new Newspaper("Times News", "Today"),
+      new Newspaper("Boise Weekly", "April 2019"),
+      new Newspaper("Idaho Statesman", "April 2019"),
+    };
+
+      Videos = new List<Video>()
+      {
+      new Video("National Lampoons Christmas Vacation", "December 1980"),
+      new Video("Hunt For Red October", "October 1984"),
+      new Video("Shawshank Redemption", "June 1994"),
+    };
+
       CheckedOut = new List<Book>();
     }
   }

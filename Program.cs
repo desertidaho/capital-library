@@ -11,9 +11,6 @@ namespace console_library
       Console.WriteLine("Welcome to Capital Library.");
       App app = new App();
       app.Run();
-
-
-
     }
   }
 }
