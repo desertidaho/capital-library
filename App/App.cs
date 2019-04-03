@@ -7,8 +7,11 @@ namespace console_library
 {
   class App
   {
+
+    public BookService bs { get; set; }
     public void Run()
     {
+      bs = new BookService();
       bool inLibrary = true;
       while (inLibrary)
       {
@@ -18,7 +21,6 @@ namespace console_library
         switch (response)
         {
           case "b":
-            BookService bs = new BookService();
             bs.Run();
             break;
           case "e":

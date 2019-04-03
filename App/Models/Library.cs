@@ -29,7 +29,7 @@ namespace console_library.Models
       Books.Add(book);
     }
 
-    public void Checkout(string selection)
+    public bool Checkout(string selection)
     {
       Book selectedBook = ValidateBook(selection, Books);
       if (selectedBook == null)
@@ -37,7 +37,7 @@ namespace console_library.Models
         Console.Clear();
         System.Console.WriteLine(@"Invalid Selection
                         ");
-        return;
+        return true;
       }
       else
       {
@@ -52,15 +52,14 @@ namespace console_library.Models
         switch (answer)
         {
           case "b":
-            BookService bs = new BookService();
-            bs.Run();
+            return true;
             break;
           case "m":
-            App app = new App();
-            app.Run();
+            return false;
             break;
           default:
             Console.WriteLine("Invalid selection.");
+            return true;
             break;
         }
       }
