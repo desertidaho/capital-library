@@ -8,6 +8,7 @@ namespace console_library.Models
     public string DateCheckedOut { get; set; }
     public string DateDue { get; set; }
 
+
     public Book(string title, string publicationDate, string author) : base(title, publicationDate)
     {
       Author = author;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace console_library.Models
 {
 
-  public class Library
+  class Library
   {
     public string Location { get; set; }
     public string Name { get; set; }
@@ -14,6 +14,7 @@ namespace console_library.Models
     public List<Newspaper> Newspapers { get; private set; }
     public List<Video> Videos { get; private set; }
     public List<Book> CheckedOut { get; private set; }
+
 
     public void PrintBooks(List<Book> books)
     {
@@ -31,7 +32,6 @@ namespace console_library.Models
     public void Checkout(string selection)
     {
       Book selectedBook = ValidateBook(selection, Books);
-
       if (selectedBook == null)
       {
         Console.Clear();
@@ -44,9 +44,25 @@ namespace console_library.Models
         selectedBook.Available = false;
         CheckedOut.Add(selectedBook);
         Books.Remove(selectedBook);
+        Console.Clear();
         Console.WriteLine($"Congrats, you checked out {selectedBook.Title} by {selectedBook.Author}.");
-        Console.WriteLine(@"
-Here are the remaining books in the library:");
+        Console.WriteLine(" ");
+        Console.WriteLine("Stay in (B)ooks or go back to (M)ain navigation.");
+        string answer = Console.ReadLine().ToLower();
+        switch (answer)
+        {
+          case "b":
+            BookService bs = new BookService();
+            bs.Run();
+            break;
+          case "m":
+            App app = new App();
+            app.Run();
+            break;
+          default:
+            Console.WriteLine("Invalid selection.");
+            break;
+        }
       }
     }
 
